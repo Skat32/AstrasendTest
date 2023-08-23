@@ -1,0 +1,33 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Astrasend.Api": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "launchUrl": "swagger/index.html",
+      "applicationUrl": "https://localhost:7066;http://localhost:5066",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        
+        "ElasticConfiguration__Uri": "localhost:9200",
+        "ElasticConfiguration__Login": "elastic",
+        "ElasticConfiguration__Password": "",
+
+        "DBSETTINGS__HOST": "127.0.0.1",
+        "DBSETTINGS__PORT": "5432",
+        "DBSETTINGS__USER": "developer",
+        "DBSETTINGS__PASSWORD": "developer",
+        "DBSETTINGS__DBNAME": "astrasend_db",
+
+        "InvoicePaymentConsumerSettings__Queue": "InvoicePayment",
+        "InvoicePaymentConsumerSettings__Exchange": "BaseExchange",
+
+        "OUTREQUESTRETRYSETTINGS__TIMEOUTINSECONDS": "60",
+        "OUTREQUESTRETRYSETTINGS__RETRYCOUNT": "3",
+        
+        "ApiClientSettings__Url": "https://somesite.com/"
+      }
+    }
+  }
+}
