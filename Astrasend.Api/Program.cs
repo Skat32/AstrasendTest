@@ -11,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 const string appName = "Astrasend";
 
 builder.WebHost.UseLogging(Assembly.GetExecutingAssembly().GetName().Name ?? appName,
-        (_, _) => { }, configuration:builder.Configuration);
+        (_, _) => { }, configuration:builder.Configuration)
+    .ConfigureBackgroundServices();
 
 builder.Services.ConfigureSettings(builder.Configuration);
 builder.Services.ConfigureDatabase();

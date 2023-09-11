@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Astrasend.Application.ApiClients;
+using Astrasend.Application.BackgroundServices;
 using Astrasend.Application.Commands.PaymentProcessing;
 using Astrasend.Application.Consumers;
 using Astrasend.DataLayer;
@@ -29,6 +30,16 @@ namespace Astrasend.Api.Configuration;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Регистрация background services
+    /// </summary>
+    public static IWebHostBuilder ConfigureBackgroundServices(this IWebHostBuilder builder)
+    {
+        return builder.ConfigureServices(service =>
+        {
+            service.AddHostedService<TestBackgroundService>();
+        });
+    }
   
     /// <summary>
     /// ConfigureHttpClients
